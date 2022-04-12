@@ -2,7 +2,7 @@
 let lastId = 0;
 
 
-function reducer(state = [], action) {
+export default function reducer(state = [], action) {
 
     // echivalent switch
 
@@ -24,17 +24,17 @@ function reducer(state = [], action) {
 
     // echivalent if
 
-    if (action.type === 'bugAdded') 
-        return [
-            ...state, 
-            {
-                id: ++lastId,
-                description: action.payload.description,
-                resolved: false
-            }
-        ];
-    else if (action.type === 'bugRemoved')
-        return state.filter(bug => bug.id !== action.payload.id)
+    // if (action.type === 'bugAdded') 
+    //     return [
+    //         ...state, 
+    //         {
+    //             id: ++lastId,
+    //             description: action.payload.description,
+    //             resolved: false
+    //         }
+    //     ];
+    // else if (action.type === 'bugRemoved')
+    //     return state.filter(bug => bug.id !== action.payload.id)
 
-    return state;
+    // return state;
 }
